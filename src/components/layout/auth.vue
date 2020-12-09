@@ -2,7 +2,11 @@
   <v-app>
     <v-main>
       <v-container class="justify-center align-center fill-height">
-        <v-text-field outlined></v-text-field>
+        <v-card>
+          <v-card-actions>
+            <v-btn @click="test">test</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-container>
     </v-main>
   </v-app>
@@ -13,7 +17,12 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class LayoutAuth extends Vue {
-
+  async test () {
+    const ref = this.$firebase.firestore().collection('test').doc('abc')
+    await ref.set({ a: 1 })
+    const sn = await ref.get()
+    console.log(sn.data())
+  }
 }
 </script>
 

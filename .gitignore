@@ -26,3 +26,4 @@ pnpm-debug.log*
 .firebaserc
 *-debug.log
 /firebase-data
+firebaseConfig.ts
