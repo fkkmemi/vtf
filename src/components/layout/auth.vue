@@ -2,11 +2,7 @@
   <v-app>
     <v-main>
       <v-container class="justify-center align-center fill-height">
-        <v-card>
-          <v-card-actions>
-            <v-btn @click="test">test</v-btn>
-          </v-card-actions>
-        </v-card>
+        <auth-sign/>
       </v-container>
     </v-main>
   </v-app>
@@ -14,8 +10,9 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import AuthSign from '@/components/auth/sign.vue'
 
-@Component
+@Component({ components: { AuthSign } })
 export default class LayoutAuth extends Vue {
   async test () {
     const ref = this.$firebase.firestore().collection('test').doc('abc')
