@@ -1,6 +1,6 @@
 <template>
   <v-form @submit.prevent="submit">
-    <v-card>
+    <!-- <v-card>
       <v-card-title>이메일로그인</v-card-title>
       <v-card-text>
         <v-text-field
@@ -12,7 +12,8 @@
         <v-btn type="submit">submit</v-btn>
         <v-btn @click="signOut">signOut</v-btn>
       </v-card-actions>
-    </v-card>
+    </v-card> -->
+    <model-test/>
 
   </v-form>
 </template>
@@ -20,8 +21,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { auth } from '@/plugins/firebase'
+import ModelTest from '@/components/test/model.vue'
 
 @Component<AuthSign>({
+  components: {
+    ModelTest
+  },
   created () {
     this.signIn()
   }
