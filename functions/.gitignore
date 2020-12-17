@@ -10,3 +10,7 @@ typings/
 
 # Node.js dependency directory
 node_modules/
+
+# custom
+key.json
+.runtimeconfig.json

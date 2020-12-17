@@ -1,7 +1,6 @@
 import firebase, { db } from '@/plugins/firebase'
 
 export class User {
-  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
   constructor (
     readonly name: string,
     readonly createdAt?: Date,
@@ -12,10 +11,7 @@ export class User {
 export const converter: firebase.firestore.FirestoreDataConverter<User> = {
   toFirestore: (model: User, setOptions?: firebase.firestore.SetOptions) => {
     if (setOptions?.merge) {
-      console.log(model)
-      const m = Object.assign(model, { updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
-      console.log(m)
-      return m
+      return Object.assign(model, { updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
     }
     return {
       name: model.name,
