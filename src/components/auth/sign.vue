@@ -9,12 +9,15 @@
         />
       </v-card-text>
       <v-card-actions>
-        <v-btn type="submit">submit</v-btn>
-        <v-btn @click="signOut">signOut</v-btn>
+        <v-btn type="submit">
+          submit
+        </v-btn>
+        <v-btn @click="signOut">
+          signOut
+        </v-btn>
       </v-card-actions>
     </v-card>
     <!-- <model-test/> -->
-
   </v-form>
 </template>
 
